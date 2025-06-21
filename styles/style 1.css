@@ -1,0 +1,60 @@
+/* body {
+  font-family: sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+article {
+  margin-bottom: 2rem;
+} */
+
+
+body {
+  font-family: sans-serif;
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #fff;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+#posts {
+  margin-top: 30px;
+}
+
+article {
+  margin-bottom: 2rem;
+}
+
+/* Dark mode */
+body.dark {
+  background: #121212;
+  color: #ddd;
+}
+
+/* Toggle button style */
+#mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+
+#active-date {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #666;
+  text-align: center;
+}
+body.dark #active-date {
+  color: #aaa;
+}
+
+
+

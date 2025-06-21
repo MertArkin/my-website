@@ -1,0 +1,220 @@
+/* styles.css */
+
+/* Importing Inter font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+/* Default Light Mode */
+body {
+  font-family: "Inter", sans-serif; /* Updated font-family */
+  /* font-size: 15px; */
+  font-size: 0.9em;
+  font-size: 1.05em;
+  font-size: 1.15em;
+  margin: 0;
+  padding: 0;
+  /* Light background */
+  background-color: #f5f5f5;
+  /* Dark background */
+  /* background-color: #121212; */
+  color: #333; /* Dark text */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+hr {
+  opacity: 40%;
+  border: 0;
+  height: 1px;
+  background-color: rgba(221, 221, 221, 0.5); /* Reduced opacity */
+  margin: 20px auto; /* Centered with auto margins */
+  max-width: 40rem;
+  /* max-width: 80%;  */
+  /* Adjust horizontal length */
+}
+
+.container {
+  max-width: 600px; /* Shrink body width */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.container ul li {
+  /* margin-left: -10px; */
+}
+
+
+
+.me {
+  font-size: 1.8em;
+}
+
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  /* padding: 20px 0; */
+  /* text-align: center; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333; /* Light mode link color */
+  font-weight: bold;
+}
+
+nav ul li a .now {
+  color: inherit; /* Makes the link color the same as the surrounding text */
+  text-decoration: underline; /* Adds underline to the text */
+}
+
+body.dark-mode nav ul li a {
+  color: #e0e0e0; /* White color for links in dark mode */
+}
+
+body.dark-mode nav ul li a:hover {
+  color: #cccccc; /* Lighter gray for hover effect in dark mode */
+}
+
+a {
+  /* Link color */
+  /* color: #007acc; */
+  /* color: rgb(172, 162, 162); */
+  color: rgb(100, 100, 100);
+  /* color: #ffffff; */
+  /* color: #007acc; */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
+  opacity: 60%;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+footer p {
+  opacity: 100%;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212; /* Dark background */
+  background-color: #100f0f;
+  color: #e0e0e0; /* Light text */
+}
+
+/* Header and Footer */
+header,
+footer {
+  background-color: #ffffff; /* Light mode background */
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+
+/* this is for both ehader and footer css */
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #1f1f1f; /* Dark mode background */
+  border-color: #333;
+}
+
+nav ul li a.dark-mode {
+  color: #e0e0e0;
+}
+
+a.dark-mode {
+  color: #66d9ef; /* Lighter link color for dark mode */
+}
+
+/* Container for buttons */
+.button-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  z-index: 1001; /* Ensure it's above other elements */
+}
+
+/* Theme switcher button */
+.theme-switcher {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffffff; /* Light mode background */
+  color: #000000; /* Dark text for light mode */
+  border: 1px solid #ddd;
+}
+
+body.dark-mode .theme-switcher {
+  background-color: #333; /* Dark mode background */
+  color: #ffffff; /* Light text for dark mode */
+  border: 1px solid #444; /* Darker border for dark mode */
+}
+
+/* Rickroll button */
+.rickroll-button {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Red background for light mode */
+  /* background-color: #ff0000; */
+  background-color: #333;
+  color: #ffffff; /* White text for light mode */
+  border: 1px solid #ddd;
+}
+
+body.dark-mode .rickroll-button {
+  background-color: #333;
+  /* Darker red for dark mode */
+  /* background-color: #cc0000; */
+  color: #ffffff; /* White text for dark mode */
+}
+
+/* Style for <h2> elements within specific sections */
+#home h2,
+#blog h2,
+#contact h2,
+#about h2,
+#explore h2 {
+  opacity: 60%;
+  font-size: 1.5em; /* Adjust size as needed */
+  font-weight: 100; /* Optionally adjust font weight */
+}
+
+#ai-link {
+  font-size: 0.9em;
+  font-size: 0.8em;
+}
