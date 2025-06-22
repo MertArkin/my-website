@@ -9,7 +9,7 @@ body {
   /* font-size: 15px; */
   font-size: 0.9em;
   font-size: 1.05em;
-  font-size: 1.15em;
+  /* font-size: 1.15em; */
   margin: 0;
   padding: 0;
   /* Light background */
@@ -43,10 +43,41 @@ hr {
 }
 
 
-
+/* Me title */
 .me {
   font-size: 1.8em;
 }
+
+.me a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.me a:hover {
+  text-decoration: none;
+}
+
+
+
+
+.download-link {
+  font-size: 0.9em;
+  color: gray;
+  /* margin-left: 8px; */
+  text-decoration: none;
+}
+
+.download-link:hover {
+  text-decoration: none;
+  /* text-decoration: underline; */
+  color: #666;
+}
+
+
+
+
+
+
 
 header {
   background-color: #ffffff;
