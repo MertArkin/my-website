@@ -11,15 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleSwitch.innerText = "🌙"; // Moon emoji for dark mode
   toggleSwitch.className = "theme-switcher";
 
-  // Create Rickroll button
-  // const rickrollButton = document.createElement("button");
-  // rickrollButton.innerText = "🎵";
-  // rickrollButton.className = "rickroll-button";
 
 
   // Append buttons to container
   buttonContainer.appendChild(toggleSwitch);
-  // buttonContainer.appendChild(rickrollButton);
 
   // Append container to body
   document.body.appendChild(buttonContainer);
@@ -54,12 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
   
 });
 
-
-
-
-
-  // Redirect to Rickroll on button click
-  // rickrollButton.addEventListener("click", () => {
-  //   window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-  // });
 
