@@ -51,15 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  
+});
+
+
+
 
 
   // Redirect to Rickroll on button click
   // rickrollButton.addEventListener("click", () => {
   //   window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
   // });
-
-  
-});
-
-
 
