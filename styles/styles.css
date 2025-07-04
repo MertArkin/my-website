@@ -43,6 +43,10 @@ hr {
 }
 
 
+/* #current-date {
+  margin-top: 10px;
+} */
+
 /* Me title */
 .me {
   font-size: 1.8em;
@@ -150,7 +154,7 @@ footer {
   background-color: #ffffff;
   border-top: 1px solid #ddd;
   text-align: center;
-  padding: 15px 0;
+  /* padding: 15px 0; */
   margin-top: 20px;
 }
 
