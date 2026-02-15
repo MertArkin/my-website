@@ -3,114 +3,353 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page 1</title>
+  <title>Explore</title>
   <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml"> <!-- Link to SVG favicon -->
+
 </head>
 <body>
-  <div data-include="../partials/header.html"></div>
+  <div data-include="partials/header.html"></div>
+    <main id="main-content">
+      <section id="writing" class="current-activity">
+        <div class="container">
 
-  <section class="current-activity">
-    <div class="container">
-      <h2 id="writing">Writing</h2>
-      <h3>Topics</h3>
+          <h2>Writing</h2>
+          <!-- <h3>Topics</h3> -->
 
-      <!-- <p><u>This is the content of Page 1.</u></p> -->
-      <!-- loop over tags or topics underlined -->
-      <!-- <p><u>{i},</u></p> -->
-      <!-- <p>This is the content of Page 1.</p> -->
+          <!-- <p><u>This is the content of Page 1.</u></p> -->
+          <!-- loop over tags or topics underlined -->
+          <!-- <p><u>{i},</u></p> -->
+          <!-- <p>This is the content of Page 1.</p> -->
+          
+          <!-- <h4>Recent</h4> -->
+
+          <p>Notes, essays, and fragments about thinking, systems, life, and awareness.
+             This is where ideas are tested and refined.</p>
+          
+          
+          <!-- <ul id="writingaa"></ul>
+            <script>
+              const folders = ["writing", "recipes", "projects"]; // inside topics/
+
+              const listEl = document.getElementById("writingaa");
+              listEl.innerHTML = folders
+                .map(f => `<li><a href="topics/view.html?folder=${f}">${f}</a></li>`)
+                .join("");
+            </script> -->
+
+
+
+
+
+
+
+
+
+<!-- 
+        <div id="folders-container"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script>
+        const folders = ["writing"]//, "recipes", "projects"]; // your folders
+        const openFiles = {}; // track open/closed state per folder
+
+        async function loadFolder(folder) {
+          const container = document.createElement("div");
+          // <h2>${folder}</h2>
+          container.innerHTML = `
+            <ul id="${folder}-list"></ul>
+            <div id="${folder}-content"></div>
+          `;
+          document.getElementById("folders-container").appendChild(container);
+
+          const indexPath = "topics/" + folder + "/index.json";
+
+          try {
+            const res = await fetch(indexPath);
+            if (!res.ok) throw new Error("Index not found");
+            const items = await res.json();
+
+            items.sort((a,b) => b.date.localeCompare(a.date)); // newest → oldest
+
+            const listEl = container.querySelector(`#${folder}-list`);
+            const contentEl = container.querySelector(`#${folder}-content`);
+
+            listEl.innerHTML = items.map(i => {
+              return `<li><a id="${folder}-${i.file}" 
+                        onclick="toggleMarkdown('${folder}','${i.file}','${folder}-content'); return false;">
+                        ${i.title}</a></li>`;
+            }).join("");
+
+          } catch(e) {
+            container.innerHTML += `<p>Error loading folder: ${e}</p>`;
+          }
+        }
+
+        async function toggleMarkdown(folder, file, contentId) {
+          const key = folder + "/" + file;
+          const el = document.getElementById(`${folder}-${file}`);
+          const contentEl = document.getElementById(contentId);
+
+          // If this file is already open → collapse
+          if(openFiles[key]) {
+            contentEl.innerHTML = "";
+            el.classList.remove("active");
+            openFiles[key] = false;
+            return;
+          }
+
+          // Close any other open file in the same folder
+          for(const k in openFiles) {
+            if(k.startsWith(folder + "/") && openFiles[k]) {
+              const prevEl = document.getElementById(`${folder}-${k.split("/")[1]}`);
+              prevEl?.classList.remove("active");
+              contentEl.innerHTML = "";
+              openFiles[k] = false;
+            }
+          }
+
+          // Load and display markdown
+          const filePath = "topics/" + folder + "/" + file;
+          try {
+            const res = await fetch(filePath);
+            if(!res.ok) throw new Error("File not found");
+            const text = await res.text();
+            contentEl.innerHTML = marked.parse(text);
+            el.classList.add("active");
+            openFiles[key] = true;
+          } catch(e) {
+            contentEl.innerText = "Error loading file: " + e;
+          }
+        }
+
+        // Load all folders
+        folders.forEach(folder => loadFolder(folder));
+      </script>
+ -->
+
+
+
+<!-- 
+        <div id="folders-container">
+          <div id="writing-block"></div>
+          <div id="recipes-block"></div>
+          <div id="projects-block"></div>
+        </div> -->
+
+        <!-- Load marked first -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> -->
+
+        <!-- Then load view.js -->
+        <!-- <script src="topics/view.js"></script>
+        <script>
+        const folders = [
+          {name: "writing", containerId: "writing-block"},
+          {name: "recipes", containerId: "recipes-block"},
+          {name: "projects", containerId: "projects-block"}
+        ];
+
+        // Initialize each folder block
+        folders.forEach(f => initFolderBlock(f.name, f.containerId));
+        </script> -->
+
+
+
+
+        <!-- Writing Block -->
+        <div class="folder-block" id="writing-block"></div>
+
       
-      <h4>Recent</h4>
-
-      <p>title1</p>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      
-      <hr>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      
-      <hr>
-      
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-      <hr>
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      </div>
-      
-      <hr>
-
-      <div class="container">
-      <h2 id="projects">Projects</h2>
-
-      <h4>Websites</h4>
-      <h4>Scripts</h4>
-      <h4>Api</h4>
-      <h4>Data</h4>
-      <!-- <p>This is the content of Page 1.</p> -->
-
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      
-      
-      <p>You can check more of my projects on <a href="https://github.com/MertArkin">GitHub</a>.</p>
 
 
-      </div>
 
 
-      <hr>
 
-      <div class="container">
-      <h2 id="recipes">Recipes</h2>
+          <!-- <ul id="writingaaa"></ul>
+          <ul id="writingaa"></ul>
 
-      <h4>single</h4>
-      <h4>shared</h4>
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+            <script>
+            async function load(id, path) {
+              try {
+                const fullPath = path + "/index.json";
+                console.log("Fetching:", fullPath);
 
-      <!-- <p>This is the content of Page 1.</p> -->
+                const res = await fetch(fullPath);
+                console.log("Status:", res.status);
 
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                const items = await res.json();
+                console.log("Data:", items);
+
+                document.getElementById(id).innerHTML =
+                  items.map(i =>
+                    // `<li><a href="${path}/view.html?f=${i.file}">${i.title}</a></li>`
+                    `<li><a href="view.html?f=${i.file}">${i.title}</a></li>`
+
+                  
+                  ).join("");
+
+              } catch (e) {
+                console.error("ERROR:", e);
+              }
+            }
 
 
-      </div>
+            // match the element you want them to be on
+            // load("writingaa", "./writing");
+            // load("writingaaa", "./recipes");
 
-      <hr>
+            
+            load("writingaa", "topics/writing");
+            // load("writingaaa", "topics/recipes");
 
-    </div>
-  </section>
+            // load("writing", "explore/writing");
+            // load("writing", "topics/writing");
+          
+            </script> -->
 
-  <div data-include="../partials/footer.html"></div>
+          
+          <!-- <p>a </p> -->
+          
+
+          <!-- <p>title1</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          
+          <hr>
+
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          
+          <hr>
+          
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+          <hr>
+
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div> -->
+          </div>
+          </section>
+
+          <hr>
+
+      <section id="projects" class="current-activity">
+
+          <div class="container">
+          <h2 id="projects">Projects</h2>
+
+          <!-- <h4>Websites</h4>
+          <h4>Scripts</h4>
+          <h4>Api</h4>
+          <h4>Data</h4> -->
+
+
+          <!-- <p>This is the content of Page 1.</p> -->
+
+          <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          -->
+          <p>Small to medium experiments — technical, creative, or conceptual.
+             Built to learn, not just to ship.</p>
+
+          <!-- <p>a </p> -->
+          
+          <!-- <p>You can check more of my projects on <a href="https://github.com/MertArkin">GitHub</a></p> -->
+
+
+        <!-- Projects Block -->
+        <div class="folder-block" id="projects-block"></div>
+
+
+
+
+          </div>
+        </section>
+
+        <hr>
+
+        <section id="recipes" class="current-activity">
+
+          <div class="container">
+          <h2>Recipes</h2>
+
+          <!-- <h4>single</h4>
+          <h4>shared</h4> -->
+          <!-- <p>This is the content of Page 1.</p> -->
+
+          
+          <!-- <p>a </p> -->
+
+          <p>Simple, practical recipes I actually use.
+             Low effort, repeatable, and optimized for daily life.</p>
+
+          <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+          essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> -->
+
+
+
+            <!-- Recipes Block -->
+          <div class="folder-block" id="recipes-block"></div>
+
+
+
+
+          </div>
+          <hr>
+          </div>
+        </section>
+
+          <!-- <hr> -->
+          <!-- <br> -->
+        </div>
+   </main>
+
+  <!-- <div data-include="../partials/footer.html"></div> -->
 
   <script src="../scripts/include.js"></script>
   <script src="../scripts/theme-switcher.js"></script>
+
+
+  <!-- Load libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="topics/view.js"></script>
+  
+  <script>
+    // Initialize each folder block separately
+    initFolderBlock("writing", "writing-block");
+    initFolderBlock("recipes", "recipes-block");
+    initFolderBlock("projects", "projects-block");
+
+  </script>
+
+
+
 </body>
 </html>
-

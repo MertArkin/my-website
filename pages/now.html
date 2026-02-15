@@ -1,52 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What I Am Doing Now</title>
+    <!-- <title>What I Am Doing Now</title> -->
+    <title>Now</title>
     <link rel="stylesheet" href="../styles/styles.css"> <!-- Link to your CSS file -->
+    <link rel="icon" href="../assets/svg/favicon.svg" type="image/svg+xml"> <!-- Link to SVG favicon -->
+
 </head>
 <body>
-    <div data-include="../partials/header.html"></div>
-
+    <div data-include="partials/header.html"></div>
     <!-- Main Content -->
-    <section class="current-activity">
-        <div class="container">
-            <h2>What I Am Doing Now</h2>
-            <p>This page will contain updates on my current activities, projects, and interests.</p>
-            <!-- Add content about what you're currently doing -->
-            <ul>
-                <li><h3>a</h3></li>
-                <p>aaa</p>
-                <p>aaa</p>
-                <li><a>Rules</a></li>
-                <li><a>Principles</a></li>
-            </ul>
-        </div>
-    </section>
 
-    <hr>
-    <p style="text-align: center;">. . .</p>
-    <br>
+        <main id="main-content">
 
-    <section class="previous-activity">
-        <div class="container">
-            <h2>Previously </h2>
-            <p>This page will contain updates on my current activities, projects, and interests.</p>
-            <!-- Add content about what you're currently doing -->
-            <ul>
-                <li><h3>a</h3></li>
-                <p>aaa</p>
-                <p>aaa</p>
-                <li><a>Rules</a></li>
-                <li><a>Principles</a></li>
-            </ul>
-        </div>
-    </section>
+                
+        <section id="now" class="current-activity">
+            <div class="container">
+                <!-- <h2>What I Am Doing Now</h2> -->
+                <h2>Now</h2>
+                
+                <!-- <p>This page will contain updates on my current activities, projects, and interests.</p> -->
+                <!-- Add content about what you're currently doing -->
+                
+                <p>I’m focused on self-development, learning, and building systems that compound over time.</p>
+                <p>I spend most of my time researching, writing, experimenting with technology, and refining how I think and work.</p>
+                
+                <ul id="now">
+                    <!-- <h3>What I’m doing now</h3> -->
+                    <!-- <li> -->
+                    <li>Studying systems, computation, and consciousness</li>
+                    <li>Building personal tools (notes, automation, websites)</li>
+                    <li>Writing and structuring ideas</li>
+                    <li>Improving discipline, health, and long-term direction</li>
+                    <!-- </li> -->
 
+                </ul>
+                <!-- <ul>
+                    <li><h3>a</h3></li>
+                    <p>aaa</p>
+                    <p>aaa</p>
+                    <li><a>Rules</a></li>
+                    <li><a>Principles</a></li>
+                </ul> -->
 
-    <div data-include="../partials/footer.html"></div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <p style="text-align: center;">. . .</p>
+
+        <!-- <br> -->
+
+        <section id="previous" class="previous-activity">
+            <div class="container">
+                <h2>Previously </h2>
+                
+                <!-- <p>This page will contain updates on my current activities, projects, and interests.</p> -->
+                <!-- Add content about what you're currently doing -->
+                
+                <ul id="now">
+                    <!-- <li><h3>a</h3></li>
+                    <p>aaa</p>
+                    <p>aaa</p>
+                    <li><a>Rules</a></li>
+                    <li><a>Principles</a></li> -->
+
+                    <li>Exploring different paths in work and learning</li>
+                    <li>Experimenting with code, ideas, and creative projects</li>
+                    <li>Collecting knowledge without structure — now organizing it</li>
+                
+                <!-- <a href="https://en.wikipedia.org/wiki/Millennium_Prize_Problems">Further Interests</a> -->
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+        
+    </main>
+
+    <!-- <div data-include="../partials/footer.html"></div> -->
     <!-- Footer -->
     <!-- <footer>
         <div class="container">
@@ -56,6 +91,4 @@
     <script src="../scripts/include.js"></script>
     <script src="../scripts/theme-switcher.js"></script>
 </body>
-
 </html>
-

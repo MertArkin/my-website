@@ -3,6 +3,22 @@
 /* Importing Inter font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+
+:root {
+  /* Primary colors */
+  --color-primary: #1e90ff;       /* Dodger Blue */
+  --color-primary-dark: #1a78d7;  /* Darker Blue */
+  --color-primary-light: #63b3ff; /* Lighter Blue */
+
+
+
+
+}
+
+/* background-color: var(--color-bg-light); */
+/* color: var(--color-text-dark); */
+
+
 /* Default Light Mode */
 body {
   font-family: "Inter", sans-serif; /* Updated font-family */
@@ -10,6 +26,7 @@ body {
   font-size: 0.9em;
   font-size: 1.05em;
   /* font-size: 1.15em; */
+  font-size: 1.15em;
   margin: 0;
   padding: 0;
   /* Light background */
@@ -17,8 +34,143 @@ body {
   /* Dark background */
   /* background-color: #121212; */
   color: #333; /* Dark text */
+  color: #000000;
+
   transition: background-color 0.3s, color 0.3s;
+  transition: background-color 1.0s, color 1.0s;
+
+
+
+  /* overflow: hidden; */
+  /* background: #111; */
+  /* cursor: none; */
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+.binary-container {
+  position: relative;
+  display: inline-block;
+  font-family: monospace;
+
+  padding: 0.5em 1em; /* add some padding */
+
+
+  /* CHANGE TO 1 to see binary title version */
+  opacity: 0;
+
+}
+
+.binary-show {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  font-size: 1rem; /* binary text size */
+
+  padding: 0.5em 1em;
+}
+
+.text-show {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: opacity 0.3s ease, font-size 0.3s ease;
+  white-space: nowrap;
+
+  font-size: 2.5rem; /* bigger text size */
+
+  opacity: 0;
+
+  /* font-family: "Inter", sans-serif; */
+
+}
+
+.binary-container:hover .binary-show {
+  opacity: 0;
+}
+
+.binary-container:hover .text-show {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Binary digit styling */
+.binary {
+  position: absolute;
+  /* font-size: 16px; */
+  font-size: 16px;
+  font-family: monospace;
+  color: #ffffff; /* white digits */
+  pointer-events: none;
+  animation: binaryFade 2s forwards; /* 2s fade out */
+}
+
+
+/* Default (light mode) = black binary */
+body:not(.dark-mode) .binary {
+  color: #000000;
+}
+
+/* Dark mode = white binary */
+body.dark-mode .binary {
+  color: #ffffff;
+}
+
+
+
+/* Animation for fading and floating effect */
+@keyframes binaryFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1.2); /* Move up and slightly scale */
+  }
+}
+
+
+
+#info {
+  font-size: 16px;
+}
+
+#open_source {
+  font-size: 14px;
+}
+
+
+
 
 hr {
   opacity: 40%;
@@ -31,11 +183,28 @@ hr {
   /* Adjust horizontal length */
 }
 
+
+
+.section #past {
+  margin-bottom: 0px;
+
+
+}
+
+
+
 .container {
   max-width: 600px; /* Shrink body width */
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
+  /* margin-bottom: 20px; */
+
+  padding-bottom: 0px;
+
+
 }
+
+
 
 
 .container ul li {
@@ -43,9 +212,54 @@ hr {
 }
 
 
-/* #current-date {
-  margin-top: 10px;
+/* span {
+  color: rebeccapurple;
+
 } */
+
+/* todo how to give this a different colour between the cycles of the css transition from dark to light mode */
+#current-date {
+  /* font-size: 16px; */
+
+  font-size: 13px;
+  /* color: #cccccc; */
+  font-weight: bold;
+  /* margin-bottom: 0; */
+  /* padding-bottom: 0; */
+
+
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* margin-top: 10px; */
+}
+
+
+
+
+#current-year {
+  /* font-size: 16px; */
+  /* margin-bottom: 0; */
+  /* padding-bottom: 0; */
+
+
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* margin-top: 10px; */
+}
+
+
+
+
+
+.tm {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+
+
+
+
 
 /* Me title */
 .me {
@@ -82,6 +296,50 @@ hr {
 
 
 
+#now {
+  font-size: 1em;
+  /* line-height: 1.6; */
+
+
+}
+
+
+
+
+ul {
+
+  /* list-style: none; */
+
+  font-size: 1em;
+  opacity: 60%;
+  /* line-height: 1.6; */
+
+
+}
+
+
+ul li {
+  margin-bottom: 10px;
+  /* color: rgb(100, 100, 100); */
+  
+  color: rgb(110, 110, 110);
+
+  /* font-weight: bold; */
+  
+  /* color: rgb(99, 99, 99); */
+  
+  /* color: #ffffff; */
+  /* color: #007acc; */
+  text-decoration: none;
+}
+
+
+/* li:before {
+  content: "+ ";
+} */
+
+
+
 
 header {
   background-color: #ffffff;
@@ -99,10 +357,12 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: center;
+  
 }
 
 nav ul li {
   margin: 0 15px;
+
 }
 
 nav ul li a {
@@ -124,11 +384,28 @@ body.dark-mode nav ul li a:hover {
   color: #cccccc; /* Lighter gray for hover effect in dark mode */
 }
 
+
+
+
+
+
 a {
+  
+  font-size: 1em;
+
+
   /* Link color */
   /* color: #007acc; */
   /* color: rgb(172, 162, 162); */
   color: rgb(100, 100, 100);
+  
+  color: rgb(110, 110, 110);
+
+  /* font-weight: bold; */
+  
+  /* color: rgb(99, 99, 99); */
+  
+  
   /* color: #ffffff; */
   /* color: #007acc; */
   text-decoration: none;
@@ -144,11 +421,38 @@ h2 {
   margin-bottom: 10px;
 }
 
+
+
 p {
   font-size: 1em;
   opacity: 60%;
-  line-height: 1.6;
+  /* line-height: 1.6; */
 }
+
+
+/* a { cursor: pointer; color: blue; text-decoration: underline; }
+a.active { font-weight: bold; color: darkblue; } */
+
+
+a { cursor: pointer; color: rgb(110, 110, 110); text-decoration: none; }
+a.active { font-weight: bold; color: rgb(110, 110, 110); }
+
+
+.folder-block {
+      /* border: 1px solid #ccc; */
+      /* border-radius: 8px; */
+      /* padding: 16px; */
+      padding: 10px;
+      /* margin-bottom: 20px; */
+      /* box-shadow: 0 2px 6px rgba(0,0,0,0.1); */
+    }
+
+
+
+
+
+
+    
 
 footer {
   background-color: #ffffff;
@@ -162,11 +466,25 @@ footer p {
   opacity: 100%;
 }
 
+
+
+
+
+
+
 /* Dark Mode */
 body.dark-mode {
   background-color: #121212; /* Dark background */
   background-color: #100f0f;
+
+  background-color: #000000;
+  
+  background-color: #252525;
+
   color: #e0e0e0; /* Light text */
+  color: #e0e0e0;
+
+  color: #ffffff;
 }
 
 /* Header and Footer */
@@ -183,7 +501,33 @@ body.dark-mode header,
 body.dark-mode footer {
   background-color: #1f1f1f; /* Dark mode background */
   border-color: #333;
+
+
+  /* width: calc(100% - 480px); */
+  /* subtract total horizontal space */
+
+  /* margin: 0 240px; */
+  /* cut from left and right */
+
+  /* padding: 0 20px; */
+  /* inner space for text */
+
+  /* box-sizing: border-box; */
+  /* include padding in width */
+
+  /* https://chatgpt.com/c/6885864c-0b14-8007-a919-f34332f31cf9 */
+
+  
 }
+
+
+
+
+
+
+
+
+
 
 nav ul li a.dark-mode {
   color: #e0e0e0;
@@ -239,17 +583,51 @@ body.dark-mode .rickroll-button {
 }
 
 /* Style for <h2> elements within specific sections */
+
+/* if id belongs to a section the whole thing gets the css font */
+/* so is it a good approach if you create multiple sections in a main tag which is inside a div tag etc */
+
+
 #home h2,
 #blog h2,
 #contact h2,
 #about h2,
-#explore h2 {
+#explore h2,
+
+
+#now h2,
+#previous h2,
+
+#past h2,
+#present h2,
+#future h2,
+
+
+#writing h2,
+#projects h2,
+#recipes h2
+
+
+{
   opacity: 60%;
   font-size: 1.5em; /* Adjust size as needed */
   font-weight: 100; /* Optionally adjust font weight */
+
+  /* margin-bottom: 20px; */
+
 }
+
 
 #ai-link {
   font-size: 0.9em;
   font-size: 0.8em;
+}
+
+
+h3 {
+ /* opacity: 60%; */
+ /* font-family: "Inter", sans-serif; */
+
+
+
 }

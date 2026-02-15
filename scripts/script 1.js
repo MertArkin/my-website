@@ -1,9 +1,5 @@
 const posts = ['posts/post1.md', 'posts/post2.md'];
-
 const container = document.getElementById('posts');
-
-
-
 // posts.forEach(path => {
 //   fetch(path)
 //     .then(res => res.text())
@@ -42,9 +38,6 @@ async function loadPosts() {
 
 loadPosts();
 
-
-
-
 const modeToggle = document.getElementById('mode-toggle');
 
 function setMode(mode) {
@@ -67,10 +60,6 @@ modeToggle.addEventListener('click', () => {
 const savedTheme = localStorage.getItem('theme') || 'light';
 setMode(savedTheme);
 
-
-
-
-
 function updateDate() {
   const el = document.getElementById('active-date');
   const now = new Date();
@@ -88,5 +77,3 @@ function updateDate() {
 
 setInterval(updateDate, 1000);
 updateDate();
-
-
