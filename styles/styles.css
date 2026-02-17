@@ -264,12 +264,17 @@ hr {
 /* Me title */
 .me {
   font-size: 1.8em;
+
+  /* display: none; */
+
 }
+
 
 .me a {
   text-decoration: none;
   color: inherit;
 }
+
 
 .me a:hover {
   text-decoration: none;
@@ -296,13 +301,20 @@ hr {
 
 
 
-#now {
+#now #now li {
   font-size: 1em;
+  color: rgb(255, 255, 255);
   /* line-height: 1.6; */
 
 
 }
 
+#previous #now li {
+
+  color: rgb(255, 255, 255);
+
+
+}
 
 
 
@@ -389,6 +401,24 @@ body.dark-mode nav ul li a:hover {
 
 
 
+li a {
+  /* color: rgb(255, 255, 255); */
+
+}
+
+
+
+a { cursor: pointer; color: rgb(110, 110, 110); text-decoration: none; }
+
+
+a.active { font-weight: bold; color: rgb(255, 255, 255); }
+/* a.passive { font-weight: bold; color: rgb(255, 255, 255); } */
+/* a.passive { font-weight: bold; color: rgb(110, 110, 110); } */
+
+
+
+
+
 a {
   
   font-size: 1em;
@@ -397,7 +427,7 @@ a {
   /* Link color */
   /* color: #007acc; */
   /* color: rgb(172, 162, 162); */
-  color: rgb(100, 100, 100);
+  /* color: rgb(100, 100, 100); */
   
   color: rgb(110, 110, 110);
 
@@ -434,8 +464,7 @@ p {
 a.active { font-weight: bold; color: darkblue; } */
 
 
-a { cursor: pointer; color: rgb(110, 110, 110); text-decoration: none; }
-a.active { font-weight: bold; color: rgb(110, 110, 110); }
+
 
 
 .folder-block {
