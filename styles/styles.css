@@ -10,8 +10,8 @@
   --color-primary-dark: #1a78d7;  /* Darker Blue */
   --color-primary-light: #63b3ff; /* Lighter Blue */
 
-
-
+  --link-color: rgb(110,110,110);
+  --link-active: rgb(100,100,100); /* light mode active */
 
 }
 
@@ -303,15 +303,15 @@ hr {
 
 #now #now li {
   font-size: 1em;
-  color: rgb(255, 255, 255);
-  /* line-height: 1.6; */
+  /* color: rgb(255, 255, 255); */
+  /* line-height: 1 .6; */
 
 
 }
 
 #previous #now li {
 
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
 
 
 }
@@ -334,7 +334,7 @@ ul li {
   margin-bottom: 10px;
   /* color: rgb(100, 100, 100); */
   
-  color: rgb(110, 110, 110);
+  /* color: rgb(110, 110, 110); */
 
   /* font-weight: bold; */
   
@@ -397,21 +397,60 @@ body.dark-mode nav ul li a:hover {
 }
 
 
+/* 
+#writing-list li a {
+  color: rgb(255, 255, 255);
+  color: rgb(110, 110, 110);
 
+} */
 
-
-
-li a {
-  /* color: rgb(255, 255, 255); */
-
+a {
+  cursor: pointer;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
+a.active {
+  font-weight: bold;
+  color: var(--link-active);
+}
+
+/* https://chatgpt.com/c/69951c98-4100-8393-8a0a-7aafd075f971 */
 
 
-a { cursor: pointer; color: rgb(110, 110, 110); text-decoration: none; }
+
+/* 
+ul li a,
+li a,
+a {
+  cursor: pointer;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a.active {
+  font-weight: bold;
+  color: var(--link-active);
+}  */
 
 
-a.active { font-weight: bold; color: rgb(255, 255, 255); }
+
+
+/*
+ul li a {
+  color: rgb(255, 255, 255);
+  color: rgb(110, 110, 110);
+
+} */
+
+/* li a { */
+  /* color: rgb(110, 110, 110); */
+  /* color: rgb(255, 255, 255); */
+/* } */
+
+/* a { cursor: pointer; color: rgb(110, 110, 110); text-decoration: none; }
+
+a.active { font-weight: bold; color: rgb(255, 255, 255); } */
 /* a.passive { font-weight: bold; color: rgb(255, 255, 255); } */
 /* a.passive { font-weight: bold; color: rgb(110, 110, 110); } */
 
@@ -430,6 +469,7 @@ a {
   /* color: rgb(100, 100, 100); */
   
   color: rgb(110, 110, 110);
+  /* color:red; */
 
   /* font-weight: bold; */
   
@@ -462,6 +502,11 @@ p {
 
 /* a { cursor: pointer; color: blue; text-decoration: underline; }
 a.active { font-weight: bold; color: darkblue; } */
+
+
+
+
+
 
 
 
@@ -514,7 +559,14 @@ body.dark-mode {
   color: #e0e0e0;
 
   color: #ffffff;
+
+   --link-color: rgb(160,160,160);
+  --link-active: rgb(255,255,255); /* dark mode active */
+
 }
+
+
+
 
 /* Header and Footer */
 header,
